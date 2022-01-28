@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="dataItem"
+            type="com.example.smartweather.ui.main.daos.WeatherDao" />
+    </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -13,9 +19,11 @@
         android:id="@+id/textview_Info1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Example1"
-
-        android:layout_marginTop="10dp"
+        android:textStyle="normal"
+        android:textSize="@dimen/TextInfoCardView_xxlarge"
+        android:text="@string/merchant_name"
+        android:textColor="@color/teal_700"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,40 +32,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        tools:text="Example2"
-        app:layout_constraintBottom_toTopOf="@+id/textview_Info3"
+        android:textStyle="bold"
+        android:textSize="@dimen/TextInfoCardView_xxxlarge"
+        tools:text="America/Mexico_City"
+        android:text="@{dataItem.timezone}"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_Info1" />
+
+
     <TextView
         android:id="@+id/textview_Info3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="normal"
+        android:textSize="@dimen/TextInfoCardView_xxlarge"
+        android:text="@string/Date"
+        android:textColor="@color/teal_700"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@id/textview_Info4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Example3"
+
         app:layout_constraintTop_toBottomOf="@id/textview_Info2" />
 
     <TextView
         android:id="@+id/textview_Info4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Example4"
-        app:layout_constraintBottom_toTopOf="@id/textview_Info5"
+
+        android:textStyle="bold"
+        android:textSize="@dimen/TextInfoCardView_xxxlarge"
+        tools:text="America/Mexico_City"
+        app:SetUpTimeStamp="@{dataItem.current.dt}"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_Info3" />
-
-    <TextView
-        android:id="@+id/textview_Info5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Example5"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_Info4" />
 
 
     <Button
@@ -68,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_Info4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

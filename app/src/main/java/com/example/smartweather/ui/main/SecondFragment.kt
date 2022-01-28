@@ -36,9 +36,13 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments?.getSerializable("Weather")
+       val Weather =  arguments?.getSerializable("Weather") as WeatherDao
 
-        Log.i("WeatherObject", Gson().toJson(arguments?.getSerializable("Weather")))
+        Log.i("WeatherObject", Gson().toJson(Weather))
+
+        binding.lifecycleOwner = this
+
+        binding.dataItem = Weather
 
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
