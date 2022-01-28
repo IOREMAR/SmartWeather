@@ -1,5 +1,8 @@
 package com.example.smartweather.ui.main.daos
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Hourly(
     val clouds: Int,
     val dew_point: Double,
@@ -7,7 +10,6 @@ data class Hourly(
     val feels_like: Double,
     val humidity: Int,
     val pressure: Int,
-    val rain: Rain,
     val temp: Double,
     val uvi: Double,
     val visibility: Int,

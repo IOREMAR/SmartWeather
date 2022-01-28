@@ -1,11 +1,14 @@
 package com.example.smartweather.ui.main.bindingAdapters
 
 
+import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neloproyect.fragmenttransaction.adapters.TransactionsAdapter
@@ -14,6 +17,8 @@ import com.example.smartweather.ui.main.daos.WeatherDao
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
+import com.example.smartweather.R
+
 
 @BindingAdapter(value = ["SetUpTimeStamp"]  )
 fun SetUpTimeStamp(view:TextView,time:Int){
@@ -62,7 +67,15 @@ fun setupRecyclerView(view: RecyclerView, listTransactions: List<WeatherDao>?) {
         view.setNestedScrollingEnabled(false)
         view.setHasFixedSize(false)
         view.setLayoutManager(linearLayoutManager)
-        view.adapter = TransactionsAdapter(listTransactions)
+        view.adapter = TransactionsAdapter(listTransactions ,
+            object :  TransactionsAdapter.WeatherSelectionListener {
+            override fun onClick(Vista: View, weatherDao: WeatherDao) {
+                val bundle = Bundle()
+                bundle.putSerializable("Weather", weatherDao) // Serializable Object
+                Navigation.findNavController(view).navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
+
+            }
+        } )
     }
 }
 

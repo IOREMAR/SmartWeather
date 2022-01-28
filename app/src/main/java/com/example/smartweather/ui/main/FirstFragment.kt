@@ -148,13 +148,6 @@ class FirstFragment : Fragment() {
         return listdates
     }
 
-
-
-
-
-
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

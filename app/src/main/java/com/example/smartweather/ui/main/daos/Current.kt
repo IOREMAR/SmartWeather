@@ -1,5 +1,8 @@
 package com.example.smartweather.ui.main.daos
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Current(
     val clouds: Int,
     val dew_point: Double,
