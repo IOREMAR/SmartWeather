@@ -136,13 +136,13 @@ class FirstFragment : Fragment() {
         calendary.add(Calendar.DAY_OF_WEEK,-1) // Second Date
         listdates.add(calendary.timeInMillis / 1000) //Save SeconDate
         Log.i("Date One",calendary.time.toString())
-        calendary.add(Calendar.DAY_OF_WEEK,-2) // Second Date
+        calendary.add(Calendar.DAY_OF_WEEK,-1) // Second Date
         listdates.add(calendary.timeInMillis / 1000 )  //Save thirthDate
         Log.i("Date One",calendary.time.toString())
-        calendary.add(Calendar.DAY_OF_WEEK,-3) // Four Date
+        calendary.add(Calendar.DAY_OF_WEEK,-1) // Four Date
         listdates.add(calendary.timeInMillis / 1000 )  //Save FourDate
         Log.i("Date One",calendary.time.toString())
-        calendary.add(Calendar.DAY_OF_WEEK,-4) // Five Date
+        calendary.add(Calendar.DAY_OF_WEEK,-1) // Five Date
         listdates.add(calendary.timeInMillis/ 1000 )  //Save Five Date
         Log.i("Date One",calendary.time.toString())
         return listdates

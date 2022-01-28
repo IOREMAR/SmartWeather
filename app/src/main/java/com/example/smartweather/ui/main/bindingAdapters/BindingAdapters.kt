@@ -13,11 +13,12 @@ import com.example.neloproyect.loader.LoadingState
 import com.example.smartweather.ui.main.daos.WeatherDao
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 @BindingAdapter(value = ["SetUpTimeStamp"]  )
 fun SetUpTimeStamp(view:TextView,time:Int){
 
-    val secondApiFormat = DateTimeFormatter.ofPattern("dd-MM-yyy")
+    val secondApiFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH)
     val timestamp = time.toLong() // timestamp in Long
 
 
