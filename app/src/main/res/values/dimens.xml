@@ -1,3 +1,25 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="padding_xxxsmall">3dp</dimen>
+    <dimen name="padding_xxsmall">5dp</dimen>
+    <dimen name="padding_xsmall">7.5dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+    <dimen name="padding_standar">16dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_xlarge">22dp</dimen>
+    <dimen name="padding_xxlarge">26dp</dimen>
+    <dimen name="padding_xxxlarge">30dp</dimen>
+
+
+
+    <dimen name="TextInfoCardView_standar">14sp</dimen>
+    <dimen name="TextInfoCardView_small">12sp</dimen>
+    <dimen name="TextInfoCardView_large">16sp</dimen>
+    <dimen name="TextInfoCardView_xlarge">18sp</dimen>
+    <dimen name="TextInfoCardView_xxlarge">20sp</dimen>
+    <dimen name="TextInfoCardView_xxxlarge">24sp</dimen>
 </resources>

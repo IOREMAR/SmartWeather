@@ -18,7 +18,7 @@
             android:name=".ui.main.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.SmartWeather.NoActionBar" />
+            android:theme="@style/Theme.SmartWeather" />
         <activity
             android:name=".ui.main.SplashActivity"
             android:exported="true"

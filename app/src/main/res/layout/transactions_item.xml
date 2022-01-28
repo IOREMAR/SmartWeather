@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dataItem"
+            type="com.example.smartweather.ui.main.daos.WeatherDao" />
+    </data>
+
+
+          <com.google.android.material.card.MaterialCardView
+            android:id="@+id/baseCardView"
+              android:theme="@style/base_cardview"
+              app:strokeColor="#D0D0D0"
+              app:strokeWidth="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            android:layout_margin="@dimen/padding_xlarge"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_standar"
+                >
+
+
+
+
+                <TextView
+                    android:id="@+id/txt_merchatName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/TextInfoCardView_xxlarge"
+                    android:text="@string/merchant_name"
+                    android:textColor="@color/teal_700"
+                    />
+
+
+
+
+
+                <TextView
+                    android:id="@+id/txt_Name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_merchatName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/TextInfoCardView_xxxlarge"
+                    tools:text="America/Mexico_City"
+                    android:text="@{dataItem.timezone}"
+                    android:textColor="@color/black"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txt_Date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_Name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/TextInfoCardView_xxlarge"
+                    android:text="@string/Date"
+                    android:textColor="@color/teal_700"
+                    />
+
+
+
+
+                <TextView
+                    android:id="@+id/txt_DateStamp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_Date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/TextInfoCardView_xxxlarge"
+                    tools:text="435000"
+                    app:SetUpTimeStamp="@{dataItem.current.dt}"
+                    android:textColor="@color/black"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -58,29 +58,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
-    // Stop location updates
-    private fun stopLocationUpdates() {
-        Log.i("StopLocation","Stop Location")
-        fusedLocationClient.removeLocationUpdates(locationCallback)
-    }
-
-    // Stop receiving location update when activity not visible/foreground
-    override fun onPause() {
-        super.onPause()
-        Log.i("StopLocation","Stop Location")
-        stopLocationUpdates()
-    }
-
-    // Start receiving location update when activity  visible/foreground
-    override fun onResume() {
-        super.onResume()
-        Log.i("StartLocation","Start  Location")
-     //   getLocationUpdates()
-     //   startLocationUpdates()
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
